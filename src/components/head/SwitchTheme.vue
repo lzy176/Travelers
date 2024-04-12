@@ -71,7 +71,7 @@ const changeTheme = (e) => {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: #fdfefedc;
+	background-color:#17202a;
 	transition: 0.4s;
 	border-radius: 30px;
 }
@@ -98,7 +98,7 @@ const changeTheme = (e) => {
 }
 
 .input__check:checked + .slider {
-	background-color: #17202a;
+	background-color: #fdfefedc;
 }
 
 .input__check:checked + .slider:before {

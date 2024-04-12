@@ -8,9 +8,9 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, defineEmits } from 'vue';
+const emit = defineEmits(['uploadFile']);
 const dragContainer = ref(null);
-const result = [];
 const getFile = async (entryItem) => {
 	if (entryItem.isDirectory) {
 		// 文件夹
@@ -38,6 +38,7 @@ const getFile = async (entryItem) => {
  * @return {*}
  */
 const getFileObject = async (itemList) => {
+	const result = [];
 	for (const item of itemList) {
 		const entry = item.webkitGetAsEntry();
 		result.push(getFile(entry));
@@ -45,7 +46,7 @@ const getFileObject = async (itemList) => {
 
 	const file = await Promise.all(result);
 	const allFiles = file.flat();
-	console.log(allFiles);
+	emit('uploadFile', allFiles);
 };
 onMounted(() => {
 	dragContainer.value.addEventListener('dragover', (e) => {
@@ -70,7 +71,10 @@ onMounted(() => {
 	justify-content: center;
 	align-items: center;
 	height: 200px;
-	border: 1px solid @borderColor;
+	border: 1px solid @themeColor;
 	margin: 10px;
+	span {
+		color: @themeColor;
+	}
 }
 </style>

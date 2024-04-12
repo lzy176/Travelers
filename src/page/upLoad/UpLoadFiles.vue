@@ -23,18 +23,19 @@
 		odirectory
 		@change="handleFolderChange"
 	>
-	<!-- <v-md-preview :text="markdown"></v-md-preview> -->
 </template>
 <script setup>
-// import markdown from './test.md?raw';
-
+import { defineEmits } from 'vue';
+const emit = defineEmits(['uploadFile']);
 const handleFileChange = (e) => {
 	const files = e.target.files;
-	console.log(files, '上传文件');
+	emit('uploadFile', files);
+	// console.log(files, '上传文件');
 };
 const handleFolderChange = (e) => {
 	const files = e.target.files;
-	console.log(files, '上传文件夹');
+	emit('uploadFile', files);
+	// console.log(files, '上传文件夹');
 };
 </script>
 

@@ -2,13 +2,13 @@
 export const themes = {
   dark: {
     'backgroundColor': '#000',
-    'borderColor': '#fff',
+    'themeColor': '#fff',
     'upLoadButtonBgColor': '#3d3a4e',
     'upLoadButtonTextColor': '#fff'
   },
   light: {
     'backgroundColor': '#fff',
-    'borderColor': '#000',
+    'themeColor': '#000',
     'upLoadButtonBgColor': '#02AD54',
     'upLoadButtonTextColor': '#fff',
 
