@@ -1,33 +1,18 @@
 <template>
 
 	<Head />
-
-	<UpLoad />
-
-
+	<router-view></router-view>
 </template>
 
 
 <script setup>
-import UpLoad from './page/upLoad/index.vue';
 import Head from './components/head/index.vue';
 </script>
 
-
-
 <style lang="less">
-#content {
-	display: flex;
-	width: 500px;
-}
-.box {
-	flex-shrink: 1;
-}
-.box1 {
-	flex-shrink: 4;
-}
 body {
-	background-color: @backgroundColor;
+	background-color: var(--color-bg-1);
 	transition: 0.3s;
+	padding: 10px;
 }
 </style>

@@ -10,12 +10,17 @@
   },
   "dependencies": {
     "@kangc/v-md-editor": "^2.3.18",
+    "axios": "^1.6.8",
     "babel-plugin-prismjs": "^2.1.0",
+    "chinese-poetry": "^1.4.1",
     "highlight.js": "^11.9.0",
+    "http": "0.0.1-security",
     "prismjs": "^1.29.0",
-    "vue": "^3.4.21"
+    "vue": "^3.4.21",
+    "vue-router": "4"
   },
   "devDependencies": {
+    "@arco-design/web-vue": "^2.55.3",
     "@vitejs/plugin-vue": "^5.0.4",
     "less": "^4.2.0",
     "less-loader": "^12.2.0",

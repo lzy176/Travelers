@@ -3,13 +3,13 @@
 		class="dragContainer"
 		ref="dragContainer"
 	>
-		<span>拖拽文件到此处</span>
+		<span>拖拽文件到此处上传</span>
 	</div>
 </template>
 
 <script setup>
 import { ref, onMounted, defineEmits } from 'vue';
-const emit = defineEmits(['uploadFile']);
+const emit = defineEmits(['getFilesList']);
 const dragContainer = ref(null);
 const getFile = async (entryItem) => {
 	if (entryItem.isDirectory) {
@@ -46,7 +46,7 @@ const getFileObject = async (itemList) => {
 
 	const file = await Promise.all(result);
 	const allFiles = file.flat();
-	emit('uploadFile', allFiles);
+	emit('getFilesList', allFiles);
 };
 onMounted(() => {
 	dragContainer.value.addEventListener('dragover', (e) => {
@@ -71,10 +71,10 @@ onMounted(() => {
 	justify-content: center;
 	align-items: center;
 	height: 200px;
-	border: 1px solid @themeColor;
+	border: 1px solid var(--color-neutral-10);
 	margin: 10px;
 	span {
-		color: @themeColor;
+		color: var(--color-neutral-10);
 	}
 }
 </style>

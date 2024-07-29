@@ -26,16 +26,14 @@
 </template>
 <script setup>
 import { defineEmits } from 'vue';
-const emit = defineEmits(['uploadFile']);
+const emit = defineEmits(['getFilesList']);
 const handleFileChange = (e) => {
 	const files = e.target.files;
-	emit('uploadFile', files);
-	// console.log(files, '上传文件');
+	emit('getFilesList', files);
 };
 const handleFolderChange = (e) => {
 	const files = e.target.files;
-	emit('uploadFile', files);
-	// console.log(files, '上传文件夹');
+	emit('getFilesList', files);
 };
 </script>
 

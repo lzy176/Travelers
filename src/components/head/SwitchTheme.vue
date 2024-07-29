@@ -10,12 +10,16 @@
 
 </template>
 <script setup>
-import { setTheme } from '@/assets/styles/theme.js';
-let theme = 'light';
-setTheme(theme);
+// import { setTheme } from '@/assets/styles/theme.js';
+let theme = '';
+// setTheme(theme);
+// const changeTheme = (e) => {
+// 	theme = theme === 'light' ? 'dark' : 'light';
+// 	setTheme(theme);
+// };
 const changeTheme = (e) => {
-	theme = theme === 'light' ? 'dark' : 'light';
-	setTheme(theme);
+	theme = theme === 'dark' ? '' : 'dark';
+	document.body.setAttribute('arco-theme', theme);
 };
 </script>
 
@@ -71,7 +75,7 @@ const changeTheme = (e) => {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color:#17202a;
+	background-color: #17202a;
 	transition: 0.4s;
 	border-radius: 30px;
 }

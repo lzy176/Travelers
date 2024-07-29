@@ -39,7 +39,6 @@ let list = reactive([{ ellipsis: false, value: 1 }]);
 
 const updatePages = (totalPages, pageIndex) => {
 	const pages = [];
-
 	if (totalPages >= 10) {
 		if (pageIndex <= 3) {
 			pages.push(
@@ -124,6 +123,7 @@ ul {
 	padding: 0;
 	span {
 		cursor: pointer;
+		color: @themeColor;
 	}
 }
 .li-item {
