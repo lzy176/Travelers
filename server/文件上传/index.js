@@ -10,24 +10,15 @@ const server = http.createServer(async (req, res) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
   res.setHeader('Access-Control-Allow-Credentials', true);
-  // 请求预检
-  if (req.method === 'OPTIONS') {
-    res.status = 200
-    res.end('预检通过')
-    return
-  }
+
   if (req.url === '/upload') {
     const form = new multiparty.Form();
-
     form.parse(req, (err, fields, files) => {
       if (err) {
         res.writeHead(500, { 'Content-Type': 'text/plain' });
         res.end('Server Error');
         return;
       }
-
-      // console.log('Fields:', fields); // 打印出表单的文本字段
-      // console.log('Files:', files); // 打印出上传的文件
       if (!fs.existsSync(UPLOAD_DIR)) {
         fs.mkdirSync(UPLOAD_DIR);
       };

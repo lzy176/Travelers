@@ -7,6 +7,7 @@ const routes = [
   },
   { path: '/poetry', component: () => import('@/page/poetry/index.vue') },
   { path: '/upLoad', component: () => import('@/page/upLoad/index.vue') },
+  { path: '/test/', component: () => import('@/page/test.vue') },
 ]
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),

@@ -43,7 +43,6 @@ const getFileObject = async (itemList) => {
 		const entry = item.webkitGetAsEntry();
 		result.push(getFile(entry));
 	}
-
 	const file = await Promise.all(result);
 	const allFiles = file.flat();
 	emit('getFilesList', allFiles);

@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
-import { reactive, ref } from 'vue';
+import { reactive } from 'vue';
 import { formatBytes } from '@/tool.js';
 import DragUpLoadFiles from './DragUpLoadFiles.vue';
 import UpLoadFiles from './UpLoadFiles.vue';
