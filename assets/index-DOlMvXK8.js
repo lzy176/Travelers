@@ -1,0 +1,1 @@
+import{a as o}from"./axios-DTyqpfTh.js";const a={__name:"index",setup(t){return o.get("https://unpkg.com/chinese-poetry@1.4.1/chinese-poetry/caocaoshiji/caocao.json").then(e=>{console.log(e)}),(e,c)=>" 诗词页 "}};export{a as default};
