@@ -1,12 +1,14 @@
 <template>
 	<div class="container">
-		头部
+		<span>{{route.meta.title}}</span>
 		<SwitchTheme />
 	</div>
 </template>
 
 <script setup>
 import SwitchTheme from './SwitchTheme.vue';
+import { useRoute } from 'vue-router';
+const route = useRoute();
 </script>
 
 <style scoped lang="less">
@@ -15,5 +17,8 @@ import SwitchTheme from './SwitchTheme.vue';
 	align-items: center;
 	justify-content: space-between;
 	height: 50px;
+	span {
+		color: var(--color-neutral-10);
+	}
 }
 </style>
