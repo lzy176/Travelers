@@ -32,11 +32,12 @@
 import { reactive } from 'vue';
 import axios from 'axios';
 const listData = reactive([]);
-
+let jytoken =
+	'eyJhcHBJZCI6IjMiLCJ1c2VyVG9rZW4iOiI1NzllODMwMTUyNzlhOTRhODg5NTFlMGEzNjEzZGRhOSJ9';
 axios
 	.get('https://courseware.saasz.vdyoo.com/api/FutureTemplate/futureTpList', {
 		headers: {
-			jytoken: `eyJhcHBJZCI6IjMiLCJ1c2VyVG9rZW4iOiI1NzllODMwMTUyNzlhOTRhODg5NTFlMGEzNjEzZGRhOSJ9`,
+			jytoken,
 		},
 		params: {
 			category: 271,
@@ -54,7 +55,7 @@ axios
 					'https://courseware.saasz.vdyoo.com/api/FutureTemplate/getFutureTp',
 					{
 						headers: {
-							jytoken: `eyJhcHBJZCI6IjMiLCJ1c2VyVG9rZW4iOiJlYjY1MmM2OGJhNGFhODZiZmQ5MzNlMmUyNTExYTJiMSJ9`,
+							jytoken,
 						},
 
 						params: {
