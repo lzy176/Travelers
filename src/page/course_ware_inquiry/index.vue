@@ -33,7 +33,7 @@ import { reactive } from 'vue';
 import axios from 'axios';
 const listData = reactive([]);
 let jytoken =
-	'eyJhcHBJZCI6IjMiLCJ1c2VyVG9rZW4iOiI1NzllODMwMTUyNzlhOTRhODg5NTFlMGEzNjEzZGRhOSJ9';
+	'eyJhcHBJZCI6IjMiLCJ1c2VyVG9rZW4iOiJjN2UxOWRmOTk2YjEwZTllY2M0OTk4ZDFiNWVkZDM0YSJ9';
 axios
 	.get('https://courseware.saasz.vdyoo.com/api/FutureTemplate/futureTpList', {
 		headers: {
