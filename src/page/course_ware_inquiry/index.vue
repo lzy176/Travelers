@@ -14,7 +14,7 @@
 					<div>{{item.name}}</div>
 				</template>
 				<template #description>
-          主题选择：
+					主题选择：
 					<a-tag
 						v-for="(item2) of item.configInfo"
 						:key="item2.id"
@@ -32,10 +32,11 @@
 import { reactive } from 'vue';
 import axios from 'axios';
 const listData = reactive([]);
+
 axios
 	.get('https://courseware.saasz.vdyoo.com/api/FutureTemplate/futureTpList', {
 		headers: {
-			jytoken: `eyJhcHBJZCI6IjMiLCJ1c2VyVG9rZW4iOiI5NjgzZTljZGZiMmQyNDcxNzZhMzQyNzlkMDM0ZGFiNyJ9`,
+			jytoken: `eyJhcHBJZCI6IjMiLCJ1c2VyVG9rZW4iOiI1NzllODMwMTUyNzlhOTRhODg5NTFlMGEzNjEzZGRhOSJ9`,
 		},
 		params: {
 			category: 271,
@@ -45,6 +46,7 @@ axios
 		},
 	})
 	.then((response) => {
+		console.log(response);
 		listData.push(...response.data.data.list);
 		listData.forEach((item) => {
 			axios
@@ -52,8 +54,9 @@ axios
 					'https://courseware.saasz.vdyoo.com/api/FutureTemplate/getFutureTp',
 					{
 						headers: {
-							jytoken: `eyJhcHBJZCI6IjMiLCJ1c2VyVG9rZW4iOiI5NjgzZTljZGZiMmQyNDcxNzZhMzQyNzlkMDM0ZGFiNyJ9`,
+							jytoken: `eyJhcHBJZCI6IjMiLCJ1c2VyVG9rZW4iOiJlYjY1MmM2OGJhNGFhODZiZmQ5MzNlMmUyNTExYTJiMSJ9`,
 						},
+
 						params: {
 							id: item.id,
 							type: item.type,
@@ -78,5 +81,3 @@ const onClickTag = (data, data2) => {
 
 <style scoped lang=less>
 </style>
-//https://mv.xesimg.com/courseware_pages/0f9c8b5e55ddff8383e0314e8791f097/html?path=https://mv.xesimg.com/courseware_pages/fa2a2b4956aa0c0ca51b6bd2d76380ee
-//https://mv.xesimg.com/courseware_pages/0f9c8b5e55ddff8383e0314e8791f097/index.html?path=https://mv.xesimg.com/courseware_pages/fa2a2b4956aa0c0ca51b6bd2d76380ee
